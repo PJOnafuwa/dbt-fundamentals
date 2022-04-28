@@ -7,7 +7,7 @@ with payments as (
             AMOUNT,
             CREATED as Payment_Date,
             _Batched_AT as Payment_Batch
-        from raw.stripe.payment
+        from {{ source('stripe', 'payment')}}
 
         
 )
