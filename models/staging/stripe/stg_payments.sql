@@ -4,7 +4,7 @@ with payments as (
             ORDERID as Order_Id,
             PaymentMethod as Payment_Method,
             STATUS,
-            AMOUNT,
+            AMOUNT / 100 as amount,
             CREATED as Payment_Date,
             _Batched_AT as Payment_Batch
         from {{ source('stripe', 'payment')}}
